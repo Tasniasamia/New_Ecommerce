@@ -9,6 +9,12 @@ import feature5 from "../../../../assets/img/features/f5.png"
 import feature6 from "../../../../assets/img/features/f6.png"
 import Card from '../../Share/Card/Card';
 import background2 from "../../../../assets/img/banner/b2.jpg"
+import banner1 from "../../../../assets/img/banner/b17.jpg";
+import banner2 from "../../../../assets/img/banner/b10.jpg";
+import banner3 from "../../../../assets/img/banner/b18.jpg";
+import banner4 from "../../../../assets/img/banner/b4.jpg";
+import banner5 from "../../../../assets/img/banner/b7.jpg";
+
 import './Home.css'
 const Home = () => {
     const[Shirt,setShirt]=useState([]);
@@ -113,10 +119,54 @@ const Home = () => {
 
 
         
+        {/* All of Banner Collection */}
+<div className='lg:px-20 py-20'>
+
+
+        <div className='grid lg:grid-cols-2 grid-cols-1 lg:gap-2'>
+<div style={{background:`url(${banner1})`,backgroundPosition:"center",backgroundSize:"contain",backgroundRepeat:"no-repeat",height:"50vh"}} className='flex items-center w-full'
+>
+    <div className='lg:p-20 p-10'>
+    <div className='text-white lg:text-2xl font-raleway '>crazy deals</div>
+    <div  className='text-white text-xl lg:text-4xl font-bold font-raleway'>buy 1 get 1 free</div>
+    <div  className='text-white lg:text-xl my-2 font-raleway'>The bassic classic dress is on sale at cara</div>
+    <div><button className='btn btn-outline text-white'style={{border:"1px solid white",borderRadius:"5px"}}>Learn More</button></div>
+    </div>
+</div>
+
+<div style={{background:`url(${banner2})`,backgroundPosition:"center",backgroundSize:"cover",backgroundRepeat:"no-repeat",height:"50vh"}} className='flex items-center  w-full'
+>
+    <div className='lg:p-20 p-10'>
+    <div className='text-white lg:text-2xl font-raleway '>Spring/summer</div>
+    <div  className='text-white text-xl lg:text-4xl font-bold font-raleway'>upcoming season</div>
+    <div  className='text-white lg:text-xl my-2 font-raleway'>The bassic classic dress is on sale at cara</div>
+    <div><button className='btn 'style={{color:"white",background:"#088178",border:"#088178"}}> Collections</button></div>
+    </div>
+</div>
+
+
+        </div>
+
+
+
+
+        <div className='grid lg:grid-cols-3 grid-cols-1 mt-5 gap-6'>
+           <div className='relatve'><img src={banner3} alt="banner3"style={{height:"100%"}}/>
+            <div className='absolute left-0 top-0 z-50'>
+                <p>Seasonal Sale</p>
+                <p>Winter Collection -50% off</p>
+            </div>
+            </div>
+            <div><img src={banner4} alt="banner3"style={{height:"100%"}}/></div>
+            <div><img src={banner5} alt="banner3"style={{height:"100%"}}/></div>
+
+
+        </div>
         
+        </div>
         
-        
-        
+
+       
         </div>
     );
 };
