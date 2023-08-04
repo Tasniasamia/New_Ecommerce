@@ -1,0 +1,147 @@
+[
+    {
+      "id": "s001",
+      "name": "Classic White Shirt",
+      "price": 29.99,
+      "ratings": 4.5,
+      "brand": "FashionMasters",
+      "description": "A timeless and versatile white shirt suitable for any occasion.",
+      "image": "https://i.ibb.co/b6wXwRH/f1.jpg"
+    },
+    {
+      "id": "s002",
+      "name": "Striped Polo Tee",
+      "price": 19.99,
+      "ratings": 4.2,
+      "brand": "UrbanStyle",
+      "description": "A stylish striped polo tee for a casual and trendy look.",
+      "image": "https://i.ibb.co/1LsvSvT/f2.jpg"
+    },
+    {
+      "id": "s003",
+      "name": "Floral Print Blouse",
+      "price": 34.95,
+      "ratings": 4.8,
+      "brand": "FemmeFatale",
+      "description": "A beautiful floral print blouse to add a touch of elegance to your outfit.",
+      "image": "https://i.ibb.co/W3x8v8k/f3.jpg"
+    },
+    {
+      "id": "s004",
+      "name": "Denim Chambray Shirt",
+      "price": 39.99,
+      "ratings": 4.4,
+      "brand": "DenimDaze",
+      "description": "A comfortable and classic denim chambray shirt for a casual yet chic look.",
+      "image": "https://i.ibb.co/Wyn2bwS/f4.jpg"
+    },
+    {
+      "id": "s005",
+      "name": "Formal Button-Up Shirt",
+      "price": 45.50,
+      "ratings": 4.7,
+      "brand": "ExecutiveWear",
+      "description": "A smart and sophisticated formal button-up shirt for professional occasions.",
+      "image": "https://i.ibb.co/G9WmPby/f5.jpg"
+    },
+    {
+      "id": "s006",
+      "name": "V-Neck T-Shirt",
+      "price": 12.99,
+      "ratings": 4.0,
+      "brand": "ComfortZone",
+      "description": "A classic V-neck t-shirt made from soft and breathable fabric.",
+      "image": "https://i.ibb.co/6HVJMxw/f6.jpg"
+    },
+    {
+      "id": "s007",
+      "name": "Graphic Print Tee",
+      "price": 21.95,
+      "ratings": 4.3,
+      "brand": "ArtisticExpressions",
+      "description": "An artistic graphic print tee that adds a creative flair to your look.",
+      "image": "https://i.ibb.co/rdJ1WwL/f7.jpg"
+    },
+    {
+      "id": "s008",
+      "name": "Linen Button-Down Shirt",
+      "price": 36.75,
+      "ratings": 4.6,
+      "brand": "LaidBackLinen",
+      "description": "A breathable and relaxed linen button-down shirt for warm days.",
+      "image": "https://i.ibb.co/bzs2Q2c/f8.jpg"
+    },
+    {
+      "id": "s009",
+      "name": "Long Sleeve Plaid Shirt",
+      "price": 27.50,
+      "ratings": 4.1,
+      "brand": "RusticCharm",
+      "description": "A classic long sleeve plaid shirt with a rustic charm.",
+      "image": "https://i.ibb.co/T8RC0Ts/n1.jpg"
+    },
+    {
+      "id": "s010",
+      "name": "Hawaiian Print Aloha Shirt",
+      "price": 32.99,
+      "ratings": 4.9,
+      "brand": "TropicalVibes",
+      "description": "A fun and vibrant Hawaiian print aloha shirt perfect for summer vibes.",
+      "image": "https://i.ibb.co/PNksTHK/n2.jpg"
+    },
+    {
+      "id": "s011",
+      "name": "Casual Henley Tee",
+      "price": 18.50,
+      "ratings": 4.2,
+      "brand": "RelaxNStyle",
+      "description": "A comfortable and casual henley tee for everyday wear.",
+      "image": "https://i.ibb.co/6rdn3SW/n3.jpg"
+    },
+    {
+      "id": "s012",
+      "name": "Button-Up Oxford Shirt",
+      "price": 29.95,
+      "ratings": 4.7,
+      "brand": "TimelessTrends",
+      "description": "A timeless button-up Oxford shirt suitable for both casual and formal occasions.",
+      "image": "https://i.ibb.co/6vDBcfL/n4.jpg"
+    },
+    {
+      "id": "s013",
+      "name": "Sporty Performance Tee",
+      "price": 24.99,
+      "ratings": 4.5,
+      "brand": "ActiveZone",
+      "description": "A sporty performance tee with moisture-wicking fabric for active individuals.",
+      "image": "https://i.ibb.co/tHx5LGj/n5.jpg"
+    },
+    {
+      "id": "s014",
+      "name": "Tie-Dye T-Shirt",
+      "price": 20.00,
+      "ratings": 4.3,
+      "brand": "HippieSoul",
+      "description": "A groovy tie-dye t-shirt that brings retro vibes to your outfit.",
+      "image": "https://i.ibb.co/jVz9s1B/n6.jpg"
+    },
+    {
+      "id": "s015",
+      "name": "Crisp Linen Shirt",
+      "price": 38.50,
+      "ratings": 4.6,
+      "brand": "FreshBreeze",
+      "description": "A crisp and lightweight linen shirt ideal for warm-weather styling.",
+      "image": "https://i.ibb.co/1nzTVJ0/n7.jpg"
+    },
+    {
+      "id": "s016",
+      "name": "Printed Silk Blouse",
+      "price": 54.99,
+      "ratings": 4.8,
+      "brand": "LuxuryElegance",
+      "description": "A luxurious printed silk blouse for a touch of sophistication.",
+      "image": "https://i.ibb.co/s3v9v3p/n8.jpg"
+    }
+  ]
+  

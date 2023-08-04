@@ -1,3 +1,6 @@
-.banner-section{
+.baton:hover , .baton:focus{
+    color:white;
+    background-color: #088178;
+    border-color: #088178;
     
 }
