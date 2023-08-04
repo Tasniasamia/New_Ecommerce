@@ -1,0 +1,42 @@
+ul.mynavbar li {
+ 
+    position: relative;
+
+}
+ul.mynavbar li a{
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+}
+ul.mynavbar li a:hover, 
+ul.mynavbar li a.active,ul.mynavbar li a:focus
+{    position: relative;
+
+    color:#088178;
+    background: transparent !important;;
+    box-shadow: none;
+    border:none !important;
+    outline: 0;
+}
+
+ul.mynavbar li a.active::after{
+    content:"";
+    width:30%;
+    height:2px;
+    position: absolute;
+    bottom:-4px;
+    left:20px;
+    color:#088178;
+
+
+}
+.header{
+    padding:20px 80px;
+    background:#E3E6F3;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    z-index: 99;
+    position: sticky;
+    top:0;
+    left:0;
+}
