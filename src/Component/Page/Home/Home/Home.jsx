@@ -151,14 +151,22 @@ const Home = () => {
 
 
         <div className='grid lg:grid-cols-3 grid-cols-1 mt-5 gap-6'>
-           <div className='relatve'><img src={banner3} alt="banner3"style={{height:"100%"}}/>
-            <div className='absolute left-0 top-0 z-50'>
-                <p>Seasonal Sale</p>
-                <p>Winter Collection -50% off</p>
+        
+            <div className=' text-white py-20 text-center'style={{background:`url(${banner3})`,backgroundSize:"cover",backgroundColor:"rgba(0,0,0,0.7)"}}>
+                <p className='text-4xl text-uppercase'>T-Shirt Collection</p>
+                <p className='text-xl text-red-400'>New Trendy Prints</p>
             </div>
+         
+            <div className=' text-white py-20 text-center h-100'style={{background:`url(${banner4})`,backgroundSize:"cover",backgroundRepeat:"no-repeat",backgroundColor:"rgba(0,0,0,0.7)",backgroundPosition:"top center"}}>
+                <p className='text-4xl text-uppercase'>New Footware Collection</p>
+                <p className='text-xl text-red-400'>Spring / Summer 2023</p>
             </div>
-            <div><img src={banner4} alt="banner3"style={{height:"100%"}}/></div>
-            <div><img src={banner5} alt="banner3"style={{height:"100%"}}/></div>
+         
+            <div className=' text-white py-20 text-center'style={{background:`url(${banner5})`,backgroundSize:"cover",backgroundColor:"rgba(0,0,0,0.7)"}}>
+                <p className='text-4xl'>Seasonal Sale</p>
+                <p className='text-xl text-red-400'>Winter Collection -50% off</p>
+            </div>
+         
 
 
         </div>
