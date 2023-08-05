@@ -22,14 +22,14 @@ const Navbar = () => {
                             <li><Link>Shop</Link></li>
                             <li><Link to="/Blog">Blog</Link></li>
                             <li><Link to="/About">About</Link></li>
-                            <li><Link>Contact</Link></li>
-                            <li><Link>Cart</Link></li>
+                            <li><Link to="/contact">Contact</Link></li>
+                            <li><Link to="/contact" ><BsBag  style={{ fontSize: "20px" }}/></Link> </li>
                          </ul>
                     </div>
                     <div className='lg:hidden block' onClick={() => { setTrue(!True) }}>
                         {
                             True ? <AiOutlineClose style={{ fontSize: "20px" }} />
-                                :<div className='flex '><Link className='me-3' ><BsBag  style={{ fontSize: "20px" }}/></Link> <AiOutlineMenu style={{ fontSize: "20px" }} /></div>}
+                                :<div className='flex '><Link to="/contact" className='me-3' ><BsBag  style={{ fontSize: "20px" }}/></Link> <AiOutlineMenu style={{ fontSize: "20px" }} /></div>}
 
                     </div>
 
