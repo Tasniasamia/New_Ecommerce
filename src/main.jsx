@@ -11,6 +11,7 @@ import About from './Component/Page/Home/About/About';
 import Shop from './Component/Page/Home/Shop/Shop';
 import Blog from './Component/Page/Home/Blog/Blog';
 import Contact from './Component/Page/Home/Contact/Contact';
+import ProductDetails from './Component/Page/Home/ProductDetails/ProductDetails';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,13 @@ const router = createBrowserRouter([
       },{
         path:"/contact",
         element:<Contact></Contact>
+      },{
+        path:"/shop",
+        element:<Shop></Shop>
+      },{
+        path:"/shop/:id",
+        element:<ProductDetails></ProductDetails>,
+   
       }
     ]
   },

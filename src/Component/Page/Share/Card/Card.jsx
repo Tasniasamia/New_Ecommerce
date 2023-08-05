@@ -1,6 +1,7 @@
 import React from 'react';
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Rating } from '@smastrom/react-rating'
+import { Link } from 'react-router-dom';
 
 import '@smastrom/react-rating/style.css'
 const Card = ({indexdata}) => {
@@ -23,7 +24,18 @@ const Card = ({indexdata}) => {
     />
     <p style={{color:"#088178"}}className='font-bold'>${indexdata.price}</p>
     </div>  
-    <div className='bg-base-300 p-2 rounded-full'><AiOutlineShoppingCart style={{fontSize:"20px",color:"#088178",fontWeight:"bold"}}/></div>
+
+{indexdata._id?     <div className='bg-base-300 p-2 rounded-full'>
+        
+        
+    <Link to={`/shop/${indexdata._id}`} >  <AiOutlineShoppingCart style={{fontSize:"20px",color:"#088178",fontWeight:"bold"}}/></Link> 
+        </div>:
+            <div className='bg-base-300 p-2 rounded-full'>
+        
+        
+            <AiOutlineShoppingCart style={{fontSize:"20px",color:"#088178",fontWeight:"bold"}}/>
+            </div>}
+
   </div>
 </div>
     );

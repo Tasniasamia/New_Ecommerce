@@ -19,7 +19,7 @@ const Navbar = () => {
                         <ul className="menu menu-horizontal px-1 mynavbar">
 
                             <li><Link to="/">Home</Link></li>
-                            <li><Link>Shop</Link></li>
+                            <li><Link to="/shop">Shop</Link></li>
                             <li><Link to="/Blog">Blog</Link></li>
                             <li><Link to="/About">About</Link></li>
                             <li><Link to="/contact">Contact</Link></li>
@@ -38,7 +38,7 @@ const Navbar = () => {
             {True && <div className='flex justify-center mx-2 lg:hidden'>
                 <ul className="menu  w-56 rounded-box mynavbar "style={{background:"#E3E6F3",boxShadow:"rgba(0,0,0,0.6)"}}>
                 <li><Link to="/"className='mx-auto block '>Home</Link></li>
-                            <li><Link className='mx-auto block '>Shop</Link></li>
+                            <li><Link className='mx-auto block 'to="/shop">Shop</Link></li>
                             <li><Link className='mx-auto block 'to="/Blog">Blog</Link></li>
                             <li><Link className='mx-auto block ' to="/About">About</Link></li>
                             <li><Link className='mx-auto block '>Contact</Link></li>
