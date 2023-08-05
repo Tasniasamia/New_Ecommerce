@@ -1,5 +1,8 @@
 import React from 'react';
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { Rating } from '@smastrom/react-rating'
+
+import '@smastrom/react-rating/style.css'
 const Card = ({indexdata}) => {
     console.log(indexdata)
     return (
@@ -13,7 +16,11 @@ const Card = ({indexdata}) => {
    
 <div>
     <p style={{color:"#1a1a1a"}} className=' font-bold'>{indexdata.name}</p>
-    <p>{indexdata.ratings}</p>
+    <Rating
+      style={{ maxWidth: 110 }}
+      value={indexdata.ratings} 
+      readOnly
+    />
     <p style={{color:"#088178"}}className='font-bold'>${indexdata.price}</p>
     </div>  
     <div className='bg-base-300 p-2 rounded-full'><AiOutlineShoppingCart style={{fontSize:"20px",color:"#088178",fontWeight:"bold"}}/></div>

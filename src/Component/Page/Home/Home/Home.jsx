@@ -43,8 +43,8 @@ const Home = () => {
 
            {/* feature */}
 
-         <div className='grid md:grid-cols-6 grid-cols-1 space-y-4 py-20 md:px-20 justify-items-center gap-6'>
-<div style={{height:"170px",border:"1px solid rgba(0,0,0,0.3)",padding:"15px"}} className='lg:my-4 '><img src={feature1}  style={{height:"100px"}} alt="feature"/>
+         <div className='grid md:grid-cols-6 grid-cols-2 space-y-4 py-20 md:px-20 justify-items-center gap-6'>
+<div style={{height:"170px",border:"1px solid rgba(0,0,0,0.3)",padding:"15px"}} className='my-4 '><img src={feature1}  style={{height:"100px"}} alt="feature"/>
 <p className='text-center p-1 bg-red-100 my-2'style={{color:"#088178"}}>Free shipping</p>
 </div>
 

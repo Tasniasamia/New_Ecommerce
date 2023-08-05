@@ -8,6 +8,8 @@ import "./index.css";
 import HomeLayout from './Component/Layout/HomeLayout/HomeLayout';
 import Home from './Component/Page/Home/Home/Home';
 import About from './Component/Page/Home/About/About';
+import Shop from './Component/Page/Home/Shop/Shop';
+import Blog from './Component/Page/Home/Blog/Blog';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,9 @@ const router = createBrowserRouter([
       {
         path:"/About",
         element:<About></About>
+      },{
+        path:"/Blog",
+        element:<Blog></Blog>
       }
     ]
   },
