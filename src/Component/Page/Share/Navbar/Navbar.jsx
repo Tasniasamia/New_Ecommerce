@@ -1,13 +1,16 @@
 import React, { useContext, useState } from 'react';
-import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { AiOutlineMenu, AiOutlineClose,AiOutlineShoppingCart } from 'react-icons/ai';
 import {BsBag } from 'react-icons/bs';
 
 import { Link } from 'react-router-dom';
 import "./Navbar.css";
 import logo from "../../../../assets/img/logo.png"
 import { AuthContext } from '../AuthProvider/AuthData';
+import useUserCollectiondata from '../../../Hook/useUserEmail';
 const Navbar = () => {
+
     const{user,logOut}=useContext(AuthContext);
+    // const{UserDataAsEmail,refetch}=useUserCollectiondata();
     const [True, setTrue] = useState(false);
     return (
         <div className='header'>
@@ -29,14 +32,21 @@ const Navbar = () => {
                                 (user?.email) ?    <li><Link onClick={logOut}>LogOut</Link></li> :   <li><Link to="/Login">Login</Link></li>
                             }
                             {/* <li><Link to="/Login">Login</Link></li> */}
+                          <li><Link to="/ShopCart2" ><AiOutlineShoppingCart  style={{ fontSize: "20px" }}/></Link> </li> 
 
-                            <li><Link to="/contact" ><BsBag  style={{ fontSize: "20px" }}/></Link> </li>
+                             <li><Link to="/shopCart" ><BsBag  style={{ fontSize: "20px" }}/></Link> </li> 
+
+ 
+
+                            
+                            
+
                          </ul>
                     </div>
                     <div className='lg:hidden block' onClick={() => { setTrue(!True) }}>
                         {
                             True ? <AiOutlineClose style={{ fontSize: "20px" }} />
-                                :<div className='flex '><Link to="/contact" className='me-3' ><BsBag  style={{ fontSize: "20px" }}/></Link> <AiOutlineMenu style={{ fontSize: "20px" }} /></div>}
+                                :<div className='flex '><Link to="/shopCart" className='me-3' ><BsBag  style={{ fontSize: "20px" }}/></Link> <AiOutlineMenu style={{ fontSize: "20px" }} /></div>}
 
                     </div>
 
@@ -48,7 +58,7 @@ const Navbar = () => {
                             <li><Link className='mx-auto block 'to="/shop">Shop</Link></li>
                             <li><Link className='mx-auto block 'to="/Blog">Blog</Link></li>
                             <li><Link className='mx-auto block ' to="/About">About</Link></li>
-                            <li><Link className='mx-auto block '>Contact</Link></li>
+                            <li><Link className='mx-auto block 'to="/contact">Contact</Link></li>
                             {
                                     (user?.email) ? <li><Link className='mx-auto block '  onClick={logOut}>LogOut</Link></li> :   <li><Link className='mx-auto block '  to="/Login">Login</Link></li>
                             }

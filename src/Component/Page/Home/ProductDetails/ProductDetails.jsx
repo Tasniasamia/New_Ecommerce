@@ -8,7 +8,7 @@ import { AuthContext } from '../../Share/AuthProvider/AuthData';
 const ProductDetails = () => {
 
   const{user}=useContext(AuthContext)
-    const[data,setData]=useState({});
+    const[data2,setData]=useState({});
     const {id}=useParams();
     useEffect(()=>{
         fetch(`http://localhost:6467/Product/${id}`)
@@ -25,7 +25,7 @@ const collectdata=(event)=>{
     const phonenumber=form.number.value;
 console.log(name,currency,postcode,address,phonenumber);
 const data={
-    name:name,currency:currency,postcode:postcode,address:address,phone:phonenumber,productId:id,useremail:user?.email
+    name:name,currency:currency,postcode:postcode,address:address,phone:phonenumber,productId:id,useremail:user?.email,product:data2.name,price:data2.price,image:data2.image
 }
 fetch('http://localhost:6467/Order',{
  method:"POST",
@@ -41,11 +41,11 @@ body:JSON.stringify(data)
     <div className="py-20 px-20 bg-base-200">
   <div className="flex lg:flex-row flex-col lg:justify-center lg:items-center">
   <div className=''>
-    <img src={data?.image} className="max-w-sm rounded-lg shadow-2xl w-full" />
+    <img src={data2?.image} className="max-w-sm rounded-lg shadow-2xl w-full" />
     <div className='mt-10 text-center '>
     {/* <h1 className="text-xl font-bold">{data.name}</h1> */}
-      <h1 className="text-2xl font-bold mb-2">price:${data.price}</h1>
-      <h1 className="text-gray-500 ">{data.description}</h1>
+      <h1 className="text-2xl font-bold mb-2">price:${data2.price}</h1>
+      <h1 className="text-gray-500 ">{data2.description}</h1>
       </div>
     </div>
  <div>

@@ -9,7 +9,10 @@ import blog6 from '../../../../assets/img/blog/b6.jpg'
 import blog7 from '../../../../assets/img/blog/b7.jpg'
 
 import { BsArrowUpRight } from "react-icons/bs";
+import useCart from '../../../Hook/useCart';
 const Blog = () => {
+    const [cartData,refetch]=useCart();
+    console.log(cartData);
     return (
         <div>
         <div style={{background:`url(${background2})`,padding:"40px 80px",height:"50vh",backgroundSize:"cover",backgroundRepeat:"no-repeat",backgroundColor:"rgba(0,0,0,0.1)"}} className=' text-center flex items-center justify-center'>

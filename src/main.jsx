@@ -22,6 +22,9 @@ import {
   QueryClientProvider,
   useQuery,
 } from '@tanstack/react-query'
+import ShopCart from './Component/Page/Home/ShopCart/ShopCart';
+import ShopCart2 from './Component/Page/Home/ShopCart/ShopCart2';
+import Private_route from './Component/Page/Share/PrivateRoute/PrivateRoute';
 
 const queryClient = new QueryClient()
 const router = createBrowserRouter([
@@ -61,6 +64,12 @@ const router = createBrowserRouter([
       },{
         path:"/Login",
         element:<Login></Login>
+      },{
+        path:"/shopCart",
+        element:<Private_route><ShopCart></ShopCart></Private_route>
+      },{
+        path:"/ShopCart2",
+        element:<Private_route><ShopCart2></ShopCart2></Private_route>
       }
     ]
   },

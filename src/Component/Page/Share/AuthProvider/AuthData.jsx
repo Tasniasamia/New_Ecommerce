@@ -57,7 +57,7 @@ const UpdateProfile=(name,photo)=>{
   })
 }
     const word="Hello User";
-    const userdata={word,signUp,signIn,logOut,user,UpdateProfile}
+    const userdata={word,signUp,signIn,logOut,user,UpdateProfile,load}
     return (
       <AuthContext.Provider value={userdata}>
         {children}
