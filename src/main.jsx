@@ -14,6 +14,9 @@ import Contact from './Component/Page/Home/Contact/Contact';
 import ProductDetails from './Component/Page/Home/ProductDetails/ProductDetails';
 import Payment from './Component/Page/Home/Payment/Payment';
 import Fail from './Component/Page/Home/Payment/Fail';
+import Resister from './Component/Page/Home/Resister/Resister';
+import Login from './Component/Page/Home/Login/Login';
+import AuthData from './Component/Page/Share/AuthProvider/AuthData';
 
 const router = createBrowserRouter([
   {
@@ -46,6 +49,12 @@ const router = createBrowserRouter([
       },{
         path:"/Payment/Fail/:tran_id",
         element:<Fail></Fail>
+      },{
+        path:"/Resister",
+        element:<Resister></Resister>
+      },{
+        path:"/Login",
+        element:<Login></Login>
       }
     ]
   },
@@ -54,6 +63,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <div className='max-w-full mx-auto'>
-    <RouterProvider router={router} /></div>
+      <AuthData>
+    <RouterProvider router={router} /></AuthData></div>
   </React.StrictMode>
 );

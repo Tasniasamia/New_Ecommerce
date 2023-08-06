@@ -23,6 +23,8 @@ const Navbar = () => {
                             <li><Link to="/Blog">Blog</Link></li>
                             <li><Link to="/About">About</Link></li>
                             <li><Link to="/contact">Contact</Link></li>
+                            <li><Link to="/Login">Login</Link></li>
+
                             <li><Link to="/contact" ><BsBag  style={{ fontSize: "20px" }}/></Link> </li>
                          </ul>
                     </div>
@@ -42,6 +44,8 @@ const Navbar = () => {
                             <li><Link className='mx-auto block 'to="/Blog">Blog</Link></li>
                             <li><Link className='mx-auto block ' to="/About">About</Link></li>
                             <li><Link className='mx-auto block '>Contact</Link></li>
+                            <li><Link className='mx-auto block ' to="/Login">Login</Link></li>
+
                             
                 </ul>
             </div>}
