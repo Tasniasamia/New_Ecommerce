@@ -30,17 +30,17 @@ const logOut=()=>{
 }
 //Manage User
 useEffect(()=>{
-const unsubscribe=()=>{
-  setLoad(false)
-    onAuthStateChanged(auth, (user) => {
+const unsubscribe=onAuthStateChanged(auth, (user) => {
+      setLoad(false);
         if (user) {
           
+
             setUser(user);
           const uid = user.uid;
        
         } 
       });
-}
+// }
 console.log(user);
 
 return ()=>{

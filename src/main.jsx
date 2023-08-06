@@ -61,9 +61,9 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  
     <div className='max-w-full mx-auto'>
       <AuthData>
     <RouterProvider router={router} /></AuthData></div>
-  </React.StrictMode>
+
 );

@@ -6,6 +6,7 @@ import { AuthContext } from '../../Share/AuthProvider/AuthData';
 
 
 const ProductDetails = () => {
+
   const{user}=useContext(AuthContext)
     const[data,setData]=useState({});
     const {id}=useParams();

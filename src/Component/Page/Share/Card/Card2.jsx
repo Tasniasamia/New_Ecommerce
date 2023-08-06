@@ -4,14 +4,11 @@ import { Rating } from '@smastrom/react-rating'
 import { Link } from 'react-router-dom';
 
 import '@smastrom/react-rating/style.css'
-import useAdmin from '../../../Hook/useUser';
-import useUser from '../../../Hook/useUser';
+
 import { AuthContext } from '../AuthProvider/AuthData';
-const Card = ({indexdata}) => {
+const Card2 = ({indexdata}) => {
     console.log(indexdata);
-    const User=useUser();
-//    const User=useUser();
-const{user}=useContext(AuthContext)
+
     return (
         <div className="card bg-base-100 shadow-xl p-5">
   <figure><img src={indexdata.image} alt="Shoes" />
@@ -31,22 +28,15 @@ const{user}=useContext(AuthContext)
     <p style={{color:"#088178"}}className='font-bold'>${indexdata.price}</p>
     </div>  
 
-    {/* {
-
-        user &&
-    } */}
-
-  <div className='bg-base-300 p-2 rounded-full'>
+ <div className='bg-base-300 p-2 rounded-full'>
         
         
-    <Link to={`/shop/${indexdata._id}`} >  <AiOutlineShoppingCart style={{fontSize:"20px",color:"#088178",fontWeight:"bold"}}/></Link> 
-        </div>
-         
-          
+        <AiOutlineShoppingCart style={{fontSize:"20px",color:"#088178",fontWeight:"bold"}}/>
+        </div>   
 
   </div>
 </div>
     );
 };
 
-export default Card;
+export default Card2;

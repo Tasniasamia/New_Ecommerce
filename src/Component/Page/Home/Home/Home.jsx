@@ -16,6 +16,7 @@ import banner4 from "../../../../assets/img/banner/b4.jpg";
 import banner5 from "../../../../assets/img/banner/b7.jpg";
 
 import './Home.css'
+import Card2 from '../../Share/Card/Card2';
 const Home = () => {
     const[Shirt,setShirt]=useState([]);
     useEffect(()=>{
@@ -84,7 +85,7 @@ const Home = () => {
 {/* Shirt Collections  feature*/}
 <div className='lg:px-20 py-4 grid lg:grid-cols-4 grid-cols-1 gap-10 space-4 lg:space-x-0'>
 {
-    Shirt.slice(0,8).map(index=><Card key={index.id} indexdata={index}></Card>)
+    Shirt.slice(0,8).map(index=><Card2 key={index.id} indexdata={index}></Card2>)
 }
 </div></div>
 
@@ -113,7 +114,7 @@ const Home = () => {
 {/* Shirt Collections  feature*/}
 <div className='lg:px-20 py-4 grid lg:grid-cols-4 grid-cols-1 gap-10 space-4 lg:space-x-0'>
 {
-    Shirt.slice(8,16).map(index=><Card key={index.id} indexdata={index}></Card>)
+    Shirt.slice(8,16).map(index=><Card2 key={index.id} indexdata={index}></Card2>)
 }
 </div></div>
 
