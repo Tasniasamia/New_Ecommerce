@@ -12,6 +12,8 @@ import Shop from './Component/Page/Home/Shop/Shop';
 import Blog from './Component/Page/Home/Blog/Blog';
 import Contact from './Component/Page/Home/Contact/Contact';
 import ProductDetails from './Component/Page/Home/ProductDetails/ProductDetails';
+import Payment from './Component/Page/Home/Payment/Payment';
+import Fail from './Component/Page/Home/Payment/Fail';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +40,12 @@ const router = createBrowserRouter([
         path:"/shop/:id",
         element:<ProductDetails></ProductDetails>,
    
+      },{
+        path:"/Payment/Success/:tran_id",
+        element:<Payment></Payment>
+      },{
+        path:"/Payment/Fail/:tran_id",
+        element:<Fail></Fail>
       }
     ]
   },
