@@ -32,9 +32,9 @@ const Navbar = () => {
                                 (user?.email) ?    <li><Link onClick={logOut}>LogOut</Link></li> :   <li><Link to="/Login">Login</Link></li>
                             }
                             {/* <li><Link to="/Login">Login</Link></li> */}
-                       {user && <li><Link to="/ShopCart2" ><AiOutlineShoppingCart  style={{ fontSize: "20px" }}/></Link> </li> }   
+                     <li><Link to="/ShopCart2" ><AiOutlineShoppingCart  style={{ fontSize: "20px" }}/></Link> </li> 
 
-                         {user && <li><Link to="/shopCart" ><BsBag  style={{ fontSize: "20px" }}/></Link> </li> }    
+                       <li><Link to="/shopCart" ><BsBag  style={{ fontSize: "20px" }}/></Link> </li>     
 
  
 

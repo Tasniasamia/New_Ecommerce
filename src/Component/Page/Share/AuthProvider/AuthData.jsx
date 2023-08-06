@@ -19,12 +19,12 @@ const signIn=(email,password)=>{
 }
 //logOut
 const logOut=()=>{
-  setUser(" ");
+
     setLoad(false)
    
-  
+    setUser(" ");
     signOut(auth).then(() => {
-      setLoad(false)
+      // setLoad(false)
       }).catch((error) => {
       
       });
@@ -32,10 +32,10 @@ const logOut=()=>{
 //Manage User
 useEffect(()=>{
 const unsubscribe=onAuthStateChanged(auth, (user) => {
-
+  setLoad(false);
         if (user) {
           
-          setLoad(false);
+       
             setUser(user);
           const uid = user.uid;
        
