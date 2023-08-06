@@ -2,9 +2,31 @@ import React from 'react';
 import background2 from '../../../../assets/img/banner/b16.jpg'
 import img from '../../../../assets/img/products/f3.jpg'
 import useCart from '../../../Hook/useCart';
+import Swal from 'sweetalert2';
 const ShopCart2 = () => {
     const [cartData,refetch]=useCart();
     // const[refetch,cartDataAll]=useCartAll()
+    const removeOne=(id)=>{
+        fetch(`http://localhost:6467/Carts/${id}`,{
+            method:"DELETE",
+            headers:{
+                "content-type":"application/json"
+            }
+        }).then(res=>res.json())
+        .then(data=>{console.log(data);
+            if(data.deletedCount>0){
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Your Delete has successFull',
+                    showConfirmButton: false,
+                    timer: 1500
+                  }) 
+                  refetch();
+            }
+        
+        })
+    }
     return (
         <div>
                       <div style={{background:`url(${background2})`,padding:"40px 80px",height:"50vh",backgroundSize:"cover",backgroundRepeat:"no-repeat",backgroundColor:"rgba(0,0,0,0.1)"}} className=' text-center flex items-center justify-center'>
@@ -64,7 +86,7 @@ cartData.map((item,index)=>
       
         <td>${item.price || "30"}</td>
         <td>{item.useremail || "contact@gmail.com"}</td>
-        <td><button className='btn text-white'style={{background:"#088178",border:"#088178"}}>Delete</button></td>
+        <td><button className='btn text-white'style={{background:"#088178",border:"#088178"}} onClick={()=>removeOne(item._id)}>Delete</button></td>
        
       </tr>)
   }
