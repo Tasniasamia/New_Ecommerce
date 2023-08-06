@@ -20,13 +20,23 @@ const collectdata=(event)=>{
     const postcode=form.postcode.value;
     const address=form.address.value;
     const phonenumber=form.number.value;
-console.log(name,currency,postcode,address,phonenumber)
+console.log(name,currency,postcode,address,phonenumber);
+const data={
+    name:name,currency:currency,postcode:postcode,address:address,phone:phonenumber,productId:id
+}
+fetch('http://localhost:6467/Order',{
+ method:"POST",
+headers:{"content-type":"application/json"},
+body:JSON.stringify(data)
+    
+}).then(res=>res.json())
+.then(data=>{console.log(data);window.location.replace(data.url)})
 
 }
     return (
   <div>
     <div className="py-20 px-20 bg-base-200">
-  <div className="flex lg:flex-row flex-col">
+  <div className="flex lg:flex-row flex-col lg:justify-center lg:items-center">
   <div className=''>
     <img src={data?.image} className="max-w-sm rounded-lg shadow-2xl w-full" />
     <div className='mt-10 text-center '>
@@ -44,8 +54,8 @@ console.log(name,currency,postcode,address,phonenumber)
  </div>
 
  <div>
- <input type="text" placeholder="currency"name="currency" className="input mb-2  input-bordered" />
- <input type="text" placeholder="postcode"name="postcode" className="input mb-2 ms-2 input-bordered" />
+ <input type="text" placeholder="BDT"name="currency" className="input mb-2  input-bordered" />
+ <input type="text" placeholder="postcode"name="postcode" className="input mb-2 lg:ms-2 input-bordered" />
 
  </div>
  <div>
