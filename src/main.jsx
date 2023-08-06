@@ -17,7 +17,13 @@ import Fail from './Component/Page/Home/Payment/Fail';
 import Resister from './Component/Page/Home/Resister/Resister';
 import Login from './Component/Page/Home/Login/Login';
 import AuthData from './Component/Page/Share/AuthProvider/AuthData';
+import {
+  QueryClient,
+  QueryClientProvider,
+  useQuery,
+} from '@tanstack/react-query'
 
+const queryClient = new QueryClient()
 const router = createBrowserRouter([
   {
     path: "/",
@@ -63,7 +69,12 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   
     <div className='max-w-full mx-auto'>
-      <AuthData>
-    <RouterProvider router={router} /></AuthData></div>
+        <QueryClientProvider client={queryClient}>
+        <AuthData>
+    <RouterProvider router={router} />
+    </AuthData>
+
+        </QueryClientProvider>
+    </div>
 
 );

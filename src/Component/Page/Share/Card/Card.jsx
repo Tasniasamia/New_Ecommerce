@@ -4,13 +4,11 @@ import { Rating } from '@smastrom/react-rating'
 import { Link } from 'react-router-dom';
 
 import '@smastrom/react-rating/style.css'
-import useAdmin from '../../../Hook/useUser';
-import useUser from '../../../Hook/useUser';
 import { AuthContext } from '../AuthProvider/AuthData';
+import useUserCollectiondata from '../../../Hook/useUserEmail';
 const Card = ({indexdata}) => {
     console.log(indexdata);
-    const User=useUser();
-//    const User=useUser();
+const{UserDataAsEmail,refetch}=useUserCollectiondata();
 const{user}=useContext(AuthContext)
     return (
         <div className="card bg-base-100 shadow-xl p-5">
@@ -31,18 +29,16 @@ const{user}=useContext(AuthContext)
     <p style={{color:"#088178"}}className='font-bold'>${indexdata.price}</p>
     </div>  
 
-    {/* {
-
-        user &&
-    } */}
-
-  <div className='bg-base-300 p-2 rounded-full'>
+{ (user?.email) &&(UserDataAsEmail.status==="user")?  <div className='bg-base-300 p-2 rounded-full'>
         
         
     <Link to={`/shop/${indexdata._id}`} >  <AiOutlineShoppingCart style={{fontSize:"20px",color:"#088178",fontWeight:"bold"}}/></Link> 
-        </div>
-         
-          
+        </div>:<div className='bg-base-300 p-2 rounded-full'>
+        
+        
+        <AiOutlineShoppingCart style={{fontSize:"20px",color:"#088178",fontWeight:"bold"}}/>
+        </div>    
+            }
 
   </div>
 </div>
