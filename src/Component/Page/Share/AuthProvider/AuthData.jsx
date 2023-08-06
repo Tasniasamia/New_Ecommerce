@@ -1,6 +1,6 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { app } from '../../../../../Firebase/Firebase_config';
-import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut} from "firebase/auth";
+import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut,onAuthStateChanged,updateProfile} from "firebase/auth";
 export const  AuthContext=createContext(null);
 const AuthData = ({children}) => {
     const auth = getAuth(app);
@@ -9,7 +9,7 @@ const AuthData = ({children}) => {
     //Resister
     const signUp=(email,password)=>{
         setLoad(true);
-    return createUserWithEmailAndPassword(auth, email, password)
+    return createUserWithEmailAndPassword(auth, email, password);
  }
 //Signin
 const signIn=(email,password)=>{
@@ -19,14 +19,45 @@ const signIn=(email,password)=>{
 }
 //logOut
 const logOut=()=>{
+    setLoad(false)
+    setUser(" ");
+  
     signOut(auth).then(() => {
-        // Sign-out successful.
+    
       }).catch((error) => {
-        // An error happened.
+      
       });
 }
+//Manage User
+useEffect(()=>{
+const unsubscribe=()=>{
+  setLoad(false)
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+          
+            setUser(user);
+          const uid = user.uid;
+       
+        } 
+      });
+}
+console.log(user);
+
+return ()=>{
+    unsubscribe();
+}
+
+// eslint-disable-next-line react-hooks/exhaustive-deps
+},[])
+// Update UserProfile
+const UpdateProfile=(name,photo)=>{
+  setLoad(true)
+  return updateProfile(auth.currentUser, {
+    displayName: name, photoURL: photo
+  })
+}
     const word="Hello User";
-    const userdata={word,signUp,signIn,logOut}
+    const userdata={word,signUp,signIn,logOut,user,UpdateProfile}
     return (
       <AuthContext.Provider value={userdata}>
         {children}

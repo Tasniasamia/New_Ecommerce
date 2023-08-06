@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {  useParams } from 'react-router-dom';
+import { AuthContext } from '../../Share/AuthProvider/AuthData';
 
 
 
 
 const ProductDetails = () => {
+  const{user}=useContext(AuthContext)
     const[data,setData]=useState({});
     const {id}=useParams();
     useEffect(()=>{
@@ -22,7 +24,7 @@ const collectdata=(event)=>{
     const phonenumber=form.number.value;
 console.log(name,currency,postcode,address,phonenumber);
 const data={
-    name:name,currency:currency,postcode:postcode,address:address,phone:phonenumber,productId:id
+    name:name,currency:currency,postcode:postcode,address:address,phone:phonenumber,productId:id,useremail:user?.email
 }
 fetch('http://localhost:6467/Order',{
  method:"POST",

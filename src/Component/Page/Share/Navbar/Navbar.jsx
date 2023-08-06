@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import {BsBag } from 'react-icons/bs';
 
 import { Link } from 'react-router-dom';
 import "./Navbar.css";
 import logo from "../../../../assets/img/logo.png"
+import { AuthContext } from '../AuthProvider/AuthData';
 const Navbar = () => {
+    const{user,logOut}=useContext(AuthContext);
     const [True, setTrue] = useState(false);
     return (
         <div className='header'>
@@ -23,7 +25,10 @@ const Navbar = () => {
                             <li><Link to="/Blog">Blog</Link></li>
                             <li><Link to="/About">About</Link></li>
                             <li><Link to="/contact">Contact</Link></li>
-                            <li><Link to="/Login">Login</Link></li>
+                            {
+                                (user?.email) ?    <li><Link onClick={logOut}>LogOut</Link></li> :   <li><Link to="/Login">Login</Link></li>
+                            }
+                            {/* <li><Link to="/Login">Login</Link></li> */}
 
                             <li><Link to="/contact" ><BsBag  style={{ fontSize: "20px" }}/></Link> </li>
                          </ul>
@@ -44,7 +49,10 @@ const Navbar = () => {
                             <li><Link className='mx-auto block 'to="/Blog">Blog</Link></li>
                             <li><Link className='mx-auto block ' to="/About">About</Link></li>
                             <li><Link className='mx-auto block '>Contact</Link></li>
-                            <li><Link className='mx-auto block ' to="/Login">Login</Link></li>
+                            {
+                                    (user?.email) ? <li><Link className='mx-auto block '  onClick={logOut}>LogOut</Link></li> :   <li><Link className='mx-auto block '  to="/Login">Login</Link></li>
+                            }
+                            {/* <li><Link className='mx-auto block ' to="/Login">Login</Link></li> */}
 
                             
                 </ul>

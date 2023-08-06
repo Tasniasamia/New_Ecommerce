@@ -1,11 +1,56 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Share/AuthProvider/AuthData';
+import Swal from 'sweetalert2';
 
 const Resister = () => {
+    const{user,signUp,UpdateProfile,logOut}=useContext(AuthContext);
     const [err,setError]=useState(null);
     const { register,reset, handleSubmit,formState: { errors } } = useForm();
-    const onSubmit = data => {console.log(data);}
+    const onSubmit =( data) => {
+        console.log(data);
+        data.status="user";
+        signUp(data.email,data.password).then((userCredential) => {
+          const user = userCredential.user;
+          console.log(user);
+          UpdateProfile(data.name,data.photo).then(() => {
+         fetch('http://localhost:6467/User',{
+            method:"POST",
+            headers:{
+                "content-type":"application/json"
+            },
+            body:JSON.stringify(data)
+         }).then(res=>res.json())
+         .then(data=>{console.log(data);
+        if(data.insertedId){
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Your work has been saved',
+                showConfirmButton: false,
+                timer: 1500
+              })
+              reset();
+              logOut();
+        }
+        
+        }
+         
+         )
+        
+          
+          }).catch((error) => {
+         
+          });
+     
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+         
+          });
+    }
     return (
         <div className='flex justify-center py-20 lg:px-20 px-10'>
             <div className='w-full lg:w-1/2'>

@@ -2,15 +2,35 @@ import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Share/AuthProvider/AuthData';
+import Swal from 'sweetalert2';
 
 const Login = () => {
-    const word=useContext(AuthContext);
+    const {word,signIn}=useContext(AuthContext);
     console.log(word);
     const[success,setSuccess]=useState(null);
     const[err,setErr]=useState(null);
     const[show,setShow]=useState(false);
     const { register,reset, handleSubmit,formState: { errors } } = useForm();
-    const onSubmit = data => {console.log(data);}
+    const onSubmit = data => {console.log(data);
+        signIn(data.email,data.password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          setSuccess("Login SuccessFull")
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Your Logn has been saved',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          reset();
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            setErr(errorMessage)
+          });
+    }
 
     return (
         <div className='py-20 lg:px-20 px-10 flex justify-center '>
