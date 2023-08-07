@@ -7,8 +7,14 @@ import "./Navbar.css";
 import logo from "../../../../assets/img/logo.png"
 import { AuthContext } from '../AuthProvider/AuthData';
 import useUserCollectiondata from '../../../Hook/useUserEmail';
+import useCart from '../../../Hook/useCart';
 const Navbar = () => {
+const[cartData,refetch]=useCart()
+// const [Cart,setCart]=useState(true);
+// if(cartData.length>0 ){
+//     setCart(!Cart);
 
+// }
     const{user,logOut}=useContext(AuthContext);
     // const{UserDataAsEmail,refetch}=useUserCollectiondata();
     const [True, setTrue] = useState(false);
@@ -32,7 +38,10 @@ const Navbar = () => {
                                 (user?.email) ?    <li><Link onClick={logOut}>LogOut</Link></li> :   <li><Link to="/Login">Login</Link></li>
                             }
                             {/* <li><Link to="/Login">Login</Link></li> */}
-                     <li><Link to="/ShopCart2" ><AiOutlineShoppingCart  style={{ fontSize: "20px" }}/></Link> </li> 
+                           
+{            cartData.length>0  &&  <li ><Link to="/ShopCart2" ><AiOutlineShoppingCart  style={{ fontSize: "20px" }}/></Link> </li> 
+}                           
+                   
 
                        <li><Link to="/shopCart" ><BsBag  style={{ fontSize: "20px" }}/></Link> </li>     
 

@@ -15,7 +15,7 @@ const Resister = () => {
           const user = userCredential.user;
           console.log(user);
           UpdateProfile(data.name,data.photo).then(() => {
-         fetch('http://localhost:6467/User',{
+         fetch('https://ecommerce-server-virid.vercel.app/User',{
             method:"POST",
             headers:{
                 "content-type":"application/json"

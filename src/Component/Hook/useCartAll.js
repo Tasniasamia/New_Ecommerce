@@ -10,7 +10,7 @@ const useCartAll = () => {
         queryKey: ['signup_usersbyemail'],
     
       queryFn:async () => {
-            const response = await axios.get(`http://localhost:6467/CartCollection` )
+            const response = await axios.get(`https://ecommerce-server-virid.vercel.app/CartCollection` )
             console.log(response.data);
 
             return response.data

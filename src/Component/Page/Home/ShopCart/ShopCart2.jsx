@@ -7,7 +7,7 @@ const ShopCart2 = () => {
     const [cartData,refetch]=useCart();
     // const[refetch,cartDataAll]=useCartAll()
     const removeOne=(id)=>{
-        fetch(`http://localhost:6467/Carts/${id}`,{
+        fetch(`https://ecommerce-server-virid.vercel.app/Carts/${id}`,{
             method:"DELETE",
             headers:{
                 "content-type":"application/json"

@@ -5,7 +5,7 @@ import Card from '../../Share/Card/Card';
 const Shop = () => {
     const[Product,setProduct]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:6467/Products')
+        fetch('https://ecommerce-server-virid.vercel.app/Products')
         .then(res=>res.json())
         .then(data=>{console.log(data); setProduct(data)})
     },[])

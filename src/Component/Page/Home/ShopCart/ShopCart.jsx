@@ -8,7 +8,7 @@ const ShopCart = () => {
     // const[cartData,refetch]=useCart();
     const [refetch,cartDataAll]=useCartAll();
     const removeOne=(id)=>{
-        fetch(`http://localhost:6467/Carts/${id}`,{
+        fetch(`https://ecommerce-server-virid.vercel.app/CartsAll/${id}`,{
             method:"DELETE",
             headers:{
                 "content-type":"application/json"
@@ -32,7 +32,7 @@ const ShopCart = () => {
         <div>
                       <div style={{background:`url(${background2})`,padding:"40px 80px",height:"50vh",backgroundSize:"cover",backgroundRepeat:"no-repeat",backgroundColor:"rgba(0,0,0,0.1)"}} className=' text-center flex items-center justify-center'>
             <div>
-        <div className='text-white lg:text-5xl text-3xl font-bold my-3 font-raleway'>{`#myOrder `}</div>
+        <div className='text-white lg:text-5xl text-3xl font-bold my-3 font-raleway'>{`#allOrder `}</div>
 
     {/* <div className='lg:text-2xl text-xl text-white font-bold'>Repair Services</div> */}
     <p className='font-raleway my-2'><span className='text-white '>LEAVE A MESSAGE.We love to hear from you</span></p>

@@ -11,7 +11,7 @@ const ProductDetails = () => {
     const[data2,setData]=useState({});
     const {id}=useParams();
     useEffect(()=>{
-        fetch(`http://localhost:6467/Product/${id}`)
+        fetch(`https://ecommerce-server-virid.vercel.app/Product/${id}`)
         .then(res=>res.json())
         .then(data=>{console.log(data); setData(data)})
     },[id])
@@ -27,7 +27,7 @@ console.log(name,currency,postcode,address,phonenumber);
 const data={
     name:name,currency:currency,postcode:postcode,address:address,phone:phonenumber,productId:id,useremail:user?.email,product:data2.name,price:data2.price,image:data2.image
 }
-fetch('http://localhost:6467/Order',{
+fetch('https://ecommerce-server-virid.vercel.app/Order',{
  method:"POST",
 headers:{"content-type":"application/json"},
 body:JSON.stringify(data)

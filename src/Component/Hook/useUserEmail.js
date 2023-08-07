@@ -9,7 +9,7 @@ const useUserCollectiondata = () => {
         queryKey: ['signup_usersbyemail',user?.email],
     
       queryFn:async () => {
-            const response = await axios.get(`http://localhost:6467/UserAdmin/${user?.email}` )
+            const response = await axios.get(`https://ecommerce-server-virid.vercel.app/UserAdmin/${user?.email}` )
             console.log(response.data);
 
             return response.data
