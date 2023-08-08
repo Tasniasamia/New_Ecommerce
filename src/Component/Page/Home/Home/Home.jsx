@@ -17,10 +17,12 @@ import banner5 from "../../../../assets/img/banner/b7.jpg";
 
 import './Home.css'
 import Card2 from '../../Share/Card/Card2';
+import useCart from '../../../Hook/useCart';
 const Home = () => {
+    const [refetch,cartDataAll]=useCart();
     const[Shirt,setShirt]=useState([]);
     useEffect(()=>{
-        fetch('Products.json')
+        fetch('https://ecommerce-server-virid.vercel.app/AllProductCollection')
         .then(res=>res.json())
         .then(data=>{setShirt(data)})
     },[])
@@ -85,7 +87,7 @@ const Home = () => {
 {/* Shirt Collections  feature*/}
 <div className='lg:px-20 py-4 grid lg:grid-cols-4 grid-cols-1 gap-10 space-4 lg:space-x-0'>
 {
-    Shirt.slice(0,8).map(index=><Card2 key={index.id} indexdata={index}></Card2>)
+(Shirt.slice(0,8)).map(index=><Card2 key={index.id} indexdata={index}></Card2>)
 }
 </div></div>
 
@@ -114,7 +116,7 @@ const Home = () => {
 {/* Shirt Collections  feature*/}
 <div className='lg:px-20 py-4 grid lg:grid-cols-4 grid-cols-1 gap-10 space-4 lg:space-x-0'>
 {
-    Shirt.slice(8,16).map(index=><Card2 key={index.id} indexdata={index}></Card2>)
+ (Shirt.slice(8,16)).map(index=><Card2 key={index.id} indexdata={index}></Card2>)
 }
 </div></div>
 

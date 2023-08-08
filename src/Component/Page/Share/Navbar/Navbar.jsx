@@ -68,7 +68,8 @@ const[cartData,refetch]=useCart()
                             <li><Link className='mx-auto block 'to="/Blog">Blog</Link></li>
                             <li><Link className='mx-auto block ' to="/About">About</Link></li>
                             <li><Link className='mx-auto block 'to="/contact">Contact</Link></li>
-                            {
+                            {            cartData.length>0  &&  <li ><Link to="/ShopCart2" className='mx-auto block ' ><AiOutlineShoppingCart/></Link> </li> 
+}                             {
                                     (user?.email) ? <li><Link className='mx-auto block '  onClick={logOut}>LogOut</Link></li> :   <li><Link className='mx-auto block '  to="/Login">Login</Link></li>
                             }
                             {/* <li><Link className='mx-auto block ' to="/Login">Login</Link></li> */}

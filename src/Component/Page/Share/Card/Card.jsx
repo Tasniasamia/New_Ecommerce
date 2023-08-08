@@ -29,16 +29,11 @@ const{user}=useContext(AuthContext)
     <p style={{color:"#088178"}}className='font-bold'>${indexdata.price}</p>
     </div>  
 
-{ (user?.email) &&(UserDataAsEmail.status==="user")?  <div className='bg-base-300 p-2 rounded-full'>
+ <div className='bg-base-300 p-2 rounded-full'>
         
         
     <Link to={`/shop/${indexdata._id}`} >  <AiOutlineShoppingCart style={{fontSize:"20px",color:"#088178",fontWeight:"bold"}}/></Link> 
-        </div>:<div className='bg-base-300 p-2 rounded-full'>
-        
-        
-        <AiOutlineShoppingCart style={{fontSize:"20px",color:"#088178",fontWeight:"bold"}}/>
-        </div>    
-            }
+        </div>
 
   </div>
 </div>

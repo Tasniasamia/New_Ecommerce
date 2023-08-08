@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Share/AuthProvider/AuthData';
 import Swal from 'sweetalert2';
 
 const Resister = () => {
+    const navigate=useNavigate();
     const{user,signUp,UpdateProfile,logOut}=useContext(AuthContext);
     const [err,setError]=useState(null);
     const { register,reset, handleSubmit,formState: { errors } } = useForm();
@@ -33,6 +34,7 @@ const Resister = () => {
               })
               reset();
               logOut();
+              navigate("/Login")
         }
         
         }

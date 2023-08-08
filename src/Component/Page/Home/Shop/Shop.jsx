@@ -4,11 +4,18 @@ import Card from '../../Share/Card/Card';
 
 const Shop = () => {
     const[Product,setProduct]=useState([]);
+    const[load,setLoad]=useState(true);
     useEffect(()=>{
         fetch('https://ecommerce-server-virid.vercel.app/Products')
         .then(res=>res.json())
-        .then(data=>{console.log(data); setProduct(data)})
+        .then(data=>{console.log(data); setProduct(data);setLoad(false)})
     },[])
+    if(load){
+        return <div className='flex justify-center my-20'><div><span className="loading loading-ball loading-xs"></span>
+        <span className="loading loading-ball loading-sm"></span>
+        <span className="loading loading-ball loading-md"></span>
+        <span className="loading loading-ball loading-lg"></span></div></div>
+    }
     return (
         <div>
             <div style={{background:`url(${banner})`,padding:"40px 80px",height:"50vh",backgroundSize:"cover",backgroundRepeat:"no-repeat",backgroundColor:"rgba(0,0,0,0.1)"}} className=' text-center flex items-center justify-center'>
